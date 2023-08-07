@@ -1,0 +1,32 @@
+name: calculator_flutter
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+    
+  cupertino_icons: ^1.0.2
+  video_player: ^2.3.3
+  chewie: ^1.0.0
+  youtube_player_flutter: ^8.0.0
+  math_expressions: ^2.1.0
+  wakelock_plus: ^1.0.0
+  url_launcher: ^6.0.0
+  path_provider: ^2.0.5
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  # Add any assets or custom fonts here if needed.
