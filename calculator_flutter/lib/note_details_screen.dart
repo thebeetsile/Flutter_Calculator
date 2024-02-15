@@ -8,20 +8,18 @@ class NoteDetailsScreen extends StatelessWidget {
 
   NoteDetailsScreen({super.key, required this.grade, required this.note});
 
-  // Map to associate notes with their corresponding tutorial lessons and links
   final Map<String, Map<String, String>> tutorialLessons = {
     'Addition Basics': {
       'tutorial': 'https://www.youtube.com/watch?v=example_addition_basics',
       'summary': 'This video tutorial covers the basics of addition in mathematics.',
-      'preview': 'https://youtu.be/BZ4FjSXjzgg', // Add the preview video link
+      'preview': 'https://youtu.be/BZ4FjSXjzgg', 
     },
     'Subtraction Basics': {
       'tutorial': 'https://www.youtube.com/watch?v=example_subtraction_basics',
       'summary': 'This video tutorial covers the basics of subtraction in mathematics.',
-      'preview': 'https://youtu.be/BZ4FjSXjzgg', // Add the preview video link
+      'preview': 'https://youtu.be/BZ4FjSXjzgg', 
     },
-    // Add other notes with their corresponding tutorial links, summaries, and preview video links
-    // ...
+   
   };
 
   @override
@@ -55,7 +53,7 @@ class NoteDetailsScreen extends StatelessWidget {
               if (tutorialLessons[note] != null)
                 ElevatedButton(
                   onPressed: () {
-                    // Open the preview video link when the button is pressed
+                  
                     launch(tutorialLessons[note]!['preview']!);
                   },
                   child: const Row(
@@ -72,7 +70,7 @@ class NoteDetailsScreen extends StatelessWidget {
                 VideoPlayerWidget(
                   videoUrl: tutorialLessons[note]!['preview']!,
                 ),
-              // Add other notes for the same topic here
+             
             ],
           ),
         ),
