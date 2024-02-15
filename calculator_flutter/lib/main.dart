@@ -13,15 +13,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Cool Calculator APP',
-      debugShowCheckedModeBanner: false, // Set this to false to remove the debug banner
+      debugShowCheckedModeBanner: false, 
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/', // Set the initial route to the Calculator screen
+      initialRoute: '/', 
       routes: {
-        '/': (context) => const Calculator(), // Route for the Calculator screen
+        '/': (context) => const Calculator(),
         '/maths_library': (context) => const MathsLibrary(),
-        '/practice_math': (context) => const PracticeMath(), // Route for the Maths Library screen
+        '/practice_math': (context) => const PracticeMath(), 
       },
     );
   }
