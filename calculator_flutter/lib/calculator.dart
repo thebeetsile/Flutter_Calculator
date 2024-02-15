@@ -61,7 +61,7 @@ class _CalculatorState extends State<Calculator> {
     '2',
     '3',
     '-',
-    'C', // Clear the entire text and reset the results to zero
+    'C', 
     '0',
     '.',
     '=',
@@ -298,7 +298,7 @@ class _CalculatorState extends State<Calculator> {
   void onButtonPressed(String buttonText) {
     setState(() {
       if (buttonText == "Del") {
-        // Clear only the text before the cursor/insertion point (modified to act as a backspace)
+    
         String currentText = _textEditingController.text;
         if (insertionPoint > 0 && insertionPoint <= currentText.length) {
           String newText = currentText.substring(0, insertionPoint - 1) +
@@ -334,7 +334,7 @@ class _CalculatorState extends State<Calculator> {
           buttonText == "-" ||
           buttonText == "*" ||
           buttonText == "/") {
-        // Perform arithmetic operations by modifying the expression
+      
         if (results != "0") {
           _textEditingController.text = results;
           insertionPoint = results.length;
