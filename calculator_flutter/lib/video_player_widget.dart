@@ -32,7 +32,6 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       autoInitialize: true,
       looping: true,
       aspectRatio: 16 / 9,
-      // Additional Chewie options if needed
     );
   }
 
