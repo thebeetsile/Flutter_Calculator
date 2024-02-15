@@ -48,14 +48,11 @@ class _PracticeMathState extends State<PracticeMath> {
   }
 
   void generateNewQuestion() {
-    // Generate a new random math expression for the quiz
     final int num1 = Random().nextInt(100);
     final int num2 = Random().nextInt(100);
     final List<String> operators = ['+', '-', '*', '/'];
     final String operator = operators[Random().nextInt(operators.length)];
     question = '$num1 $operator $num2';
-
-    // Evaluate the answer for the generated expression
     final Parser p = Parser();
     final Expression exp = p.parse(question);
     final ContextModel cm = ContextModel();
@@ -83,13 +80,12 @@ class _PracticeMathState extends State<PracticeMath> {
                   onPressed: () {
                     Navigator.pop(context);
                     setState(() {
-                      isAnswered = false; // Reset the isAnswered flag
-                      points++; // Increase points by 1 for correct answer
+                      isAnswered = false; 
+                      points++; 
                       if (points >= 10) {
-                        // If user has 10 or more points, show happy emoji
                         showEmojiDialog(EmojiType.happy);
                       } else {
-                        generateNewQuestion(); // Move to the next question
+                        generateNewQuestion(); 
                       }
                     });
                   },
@@ -112,8 +108,7 @@ class _PracticeMathState extends State<PracticeMath> {
                     Navigator.pop(context);
                     setState(() {
                       isAnswered = false;
-                      generateNewQuestion(); // Move to the next question
-                      _textEditingController.clear(); // Clear the input text box
+                      _textEditingController.clear();
                     });
                   },
                   child: Text('Try Again'),
@@ -127,7 +122,6 @@ class _PracticeMathState extends State<PracticeMath> {
         isAnswered = true;
       });
     } catch (e) {
-      // If the user's input cannot be parsed as a number, show an error dialog
       showDialog(
         context: context,
         builder: (context) {
@@ -186,15 +180,15 @@ class _PracticeMathState extends State<PracticeMath> {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.pop(context); // Close the emoji dialog
+                Navigator.pop(context); 
                 setState(() {
-                  isAnswered = false; // Reset the isAnswered flag
-                  points = 0; // Reset points
-                  userAnswer = ''; // Clear the user's answer
-                  _textEditingController.clear(); // Clear the input text box
+                  isAnswered = false; 
+                  points = 0;
+                  userAnswer = '';
+                  _textEditingController.clear(); 
                 });
-                generateNewQuestion(); // Move to the next question
-                startTimer(); // Restart the timer
+                generateNewQuestion(); 
+                startTimer(); 
               },
               child: Text('OK'),
             ),
